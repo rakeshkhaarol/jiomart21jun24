@@ -1,0 +1,19 @@
+.nav-1 {
+    height: 80px;
+    background: #0078AD;
+}
+
+.nav-2 {
+    height: 48px;
+    background: #0C5273;
+}
+
+main {
+    height: 600px;
+    border: 1px solid black;
+}
+
+footer {
+    height: 545px;
+    background: #F5F5F5;
+}
