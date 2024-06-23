@@ -17,6 +17,32 @@ footer {
     height: 545px;
     background: #F5F5F5;
 }
-placeholder_clrP{
+
+.search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     color: white;
-}
+    
+  }
+  .doted_icon{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    font-size: 20px; 
+    color: white;
+    transform: translateY(-50%);
+    cursor: pointer;
+    
+    
+  }
+  
+  .placeholder_clr::placeholder {
+    color: white; /* Adjust the color and opacity as needed */
+  }
