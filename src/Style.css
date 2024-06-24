@@ -46,3 +46,6 @@ footer {
   .placeholder_clr::placeholder {
     color: white; /* Adjust the color and opacity as needed */
   }
+  .hvr:hover{
+    background: #0C5273
+  }
