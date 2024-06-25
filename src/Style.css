@@ -1,51 +1,92 @@
 .nav-1 {
-    height: 80px;
-    background: #0078AD;
+  height: 80px;
+  background: #0078AD;
+  position: relative;
 }
 
 .nav-2 {
-    height: 48px;
-    background: #0C5273;
+  height: 48px;
+  background: #0C5273;
 }
 
 main {
-    height: 600px;
-    border: 1px solid black;
+  height: 600px;
+  border: 1px solid black;
 }
 
 footer {
-    height: 545px;
-    background: #F5F5F5;
+  height: 545px;
+  background: #F5F5F5;
 }
 
 .search-container {
-    position: relative;
-    width: 100%;
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    
-  }
-  .doted_icon{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    font-size: 20px; 
-    color: white;
-    transform: translateY(-50%);
-    cursor: pointer;
-    
-    
-  }
-  
-  .placeholder_clr::placeholder {
-    color: white; /* Adjust the color and opacity as needed */
-  }
-  .hvr:hover{
-    background: #0C5273
-  }
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+
+}
+
+.doted_icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  font-size: 20px;
+  color: white;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+
+}
+
+.placeholder_clr::placeholder {
+  color: white;
+  /* Adjust the color and opacity as needed */
+}
+
+.hvr:hover {
+  background: #0C5273
+}
+
+.hvr1:hover {
+  background: #E5F1F7
+}
+
+.custom-modal .modal-dialog {
+  max-width: 36%;
+  /* Width ko adjust karein */
+  max-height: 100%;
+  /* Height ko adjust karein */
+
+}
+
+
+
+.full-w-hvr {
+  background: #0078AD;
+  border: none;
+}
+
+.full-w-hvr:hover {
+  background: #0C5273;
+}
+
+.custom-modal .modal-content {
+  height: 100%;
+}
+
+.modal-triangle {
+  position: absolute;
+  height: 10;
+  width: 10;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+  /* Change this color to match your modal background */
+}
