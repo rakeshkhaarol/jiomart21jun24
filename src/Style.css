@@ -77,9 +77,6 @@ footer {
   background: #0C5273;
 }
 
-.custom-modal .modal-content {
-  height: 100%;
-}
 
 .modal-triangle {
   position: absolute;
@@ -89,4 +86,24 @@ footer {
   border-right: 20px solid transparent;
   border-bottom: 20px solid white;
   /* Change this color to match your modal background */
+}
+
+
+#search-model {
+  position: absolute;
+  width: 480px;
+  height: 500px;
+  background: white;
+    margin-top: 20;
+    padding-top: 0;
+
+  top: 40px ;
+  right: -10px;
+  border-radius: 30px;
+  display: none; /* Ensure it's hidden by default */
+}
+
+.r_btn{
+background: brown;
+border:  black;
 }
