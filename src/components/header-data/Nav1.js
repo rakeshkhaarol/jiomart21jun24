@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Container, Form, Image, Modal, Navbar } from 'react-bootstrap'
 import jiomrt from '../../assets/images/jiomart-logo.png'
-import { faCartShopping, faCircleUser, faList, faLocationCrosshairs, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import allimg from '../../assets/images/electronics.webp'
+import allimg1 from '../../assets/images/fashion.webp'
+import { faAngleLeft, faAngleRight, faCartShopping, faCircleUser, faList, faLocationCrosshairs, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, } from 'react-router-dom';
 
 
@@ -13,12 +15,60 @@ export default function Nav1() {
   const [isHoverd, setIsHoverd] = useState(false)
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+
   const searchModelRef = useRef(null);
 
   const handleClose = () => setShow(false);
   const handleClose1 = () => setShow1(false);
   const handleShow = () => setShow(true);
   const handleShow1 = () => setShow1(true);
+  const [currentStartIndex, setCurrentStartIndex] = useState(0);
+  const [visibleImagesCount, setVisibleImagesCount] = useState(5);
+  const containerRef = useRef(null);
+  const images = [
+    { allimg },
+    allimg1,
+
+    "https://i.etsystatic.com/14466987/r/il/5f0e31/2268038976/il_fullxfull.2268038976_ofll.jpg",
+    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
+    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
+    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
+    'https://i.etsystatic.com/14466987/r/il/5f0e31/2268038976/il_fullxfull.2268038976_ofll.jpg'
+    // Add more image URLs as needed
+  ];
+  const imageSize = 75; // size of the images
+  const imageMargin = 20; // margin for the images
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const count = Math.max(1, Math.floor(containerWidth / (imageSize + imageMargin)));
+        setVisibleImagesCount(count);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // initial call
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleNext = () => {
+    if (currentStartIndex + visibleImagesCount < images.length) {
+      setCurrentStartIndex(currentStartIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentStartIndex > 0) {
+      setCurrentStartIndex(currentStartIndex - 1);
+    }
+  };
+
+  const visibleImages = images.slice(currentStartIndex, currentStartIndex + visibleImagesCount);
 
 
   //definetion area
@@ -34,6 +84,7 @@ export default function Nav1() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [searchModelRef]);
+
 
 
 
@@ -102,25 +153,71 @@ export default function Nav1() {
             aria-labelledby="contained-modal-title-vcenter"
             centered
             dialogClassName="custom-modal-2"
+            animation={false}
           >
-            <Modal.Body>
+            <Modal.Body style={{paddingLeft:0,paddingRight:0}}>
               <div
+
                 style={{ display: show1 ? 'block' : 'none' }}
                 ref={searchModelRef}
                 onHide={handleClose1}
+
               >
                 <h6 className='mt-4 ms-4'>Discover More</h6>
-                <Button className='mt-2 ms-4 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>cold drinks</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>sugar</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>biscuits</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>oil</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>mustard oil</Button>
-                <Button className='mt-2 ms-4 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>bharat rise</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>rise</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>atta</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>ghee</Button>
-                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color:'black',}}>surf surfexcel</Button>
+                <Button className='mt-2 ms-4 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>cold drinks</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>sugar</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>biscuits</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>oil</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>mustard oil</Button>
+                <Button className='mt-2 ms-4 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>bharat rise</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>rise</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>atta</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>ghee</Button>
+                <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>surf surfexcel</Button>
 
+                <h6 className='mt-4 ms-4'>Popular Catagories</h6>
+                <div style={{ display: 'flex', alignItems: 'center', marginTop:20 }}>
+                  {currentStartIndex > 0 && (
+                    <button style={{ marginRight: '5px',marginLeft:5, height:40,width:40,borderRadius:40,border:'1px solid lightgray',background:'white'}} onClick={handlePrev}>
+                      <FontAwesomeIcon icon={faAngleLeft} />
+                    </button>
+                  )}
+                  <div style={{ display: 'flex', overflow: 'hidden' }} ref={containerRef}>
+                    {visibleImages.map((src, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          height: imageSize,
+                          width: imageSize,
+                          borderRadius: '50%',
+                          background: '#FDE7E7',
+                          margin: '0 10px',
+                          paddingTop: 10,
+
+                          paddingBottom: 10,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <div style={{ height: imageSize, width: imageSize, borderRadius: '50%', background: '#FDE7E7', overflow: 'hidden' }}>
+                          <img
+                            src={src}
+                            alt={`Example ${index}`}
+                            style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {currentStartIndex + visibleImagesCount < images.length && (
+                    <button style={{ marginLeft:5,marginRight:5, height:40,width:40,borderRadius:40,border:'1px solid lightgray',background:'white'}} onClick={handleNext}>
+                      <FontAwesomeIcon icon={faAngleRight} />
+                    </button>
+                  )}
+                </div>
+               
               </div>
             </Modal.Body>
           </Modal>
