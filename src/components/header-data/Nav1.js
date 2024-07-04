@@ -1,23 +1,24 @@
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useRef, useState } from 'react'
-import { Button, Container, Form, Image, Modal, Navbar } from 'react-bootstrap'
-import jiomrt from '../../assets/images/jiomart-logo.png'
-import allimg from '../../assets/images/electronics.webp'
-import allimg1 from '../../assets/images/fashion.webp'
+import React, { useEffect, useRef, useState } from 'react';
+import { Button, Container, Form, Image, Modal, Navbar } from 'react-bootstrap';
+import jiomrt from '../../assets/images/jiomart-logo.png';
+import Electronics from '../../assets/images/electronics.webp';
+import Fashion from '../../assets/images/fashion.webp';
+import fruits from '../../assets/images/fruits.webp';
+import grocery from '../../assets/images/grocery.webp';
+import home_improvement from '../../assets/images/home_improvement.webp';
+import home_kitchen from '../../assets/images/home_kitchen.webp';
+import jewellery from '../../assets/images/jewellery.webp';
+import no_image from '../../assets/images/no_image.webp';
 import { faAngleLeft, faAngleRight, faCartShopping, faCircleUser, faList, faLocationCrosshairs, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Link, } from 'react-router-dom';
-
-
+import { Link } from 'react-router-dom';
 
 export default function Nav1() {
-  //hoks area
-  const [isHoverd, setIsHoverd] = useState(false)
+  const [isHoverd, setIsHoverd] = useState(false);
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-
   const searchModelRef = useRef(null);
-
   const handleClose = () => setShow(false);
   const handleClose1 = () => setShow1(false);
   const handleShow = () => setShow(true);
@@ -25,19 +26,20 @@ export default function Nav1() {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const [visibleImagesCount, setVisibleImagesCount] = useState(5);
   const containerRef = useRef(null);
-  const images = [
-    { allimg },
-    allimg1,
 
-    "https://i.etsystatic.com/14466987/r/il/5f0e31/2268038976/il_fullxfull.2268038976_ofll.jpg",
-    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
-    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
-    "https://tse1.mm.bing.net/th?id=OIP.LrKLaw3dS2YgwMh5xVJjggHaIJ&pid=Api&P=0&h=220",
-    'https://i.etsystatic.com/14466987/r/il/5f0e31/2268038976/il_fullxfull.2268038976_ofll.jpg'
-    // Add more image URLs as needed
+  const images = [
+    { src: Electronics, name: 'Electronics' },
+    { src: Fashion, name: 'Fashion' },
+    { src: fruits, name: 'fruits' },
+    { src: grocery, name: 'grocery' },
+    { src: home_improvement, name: 'home_improvement' },
+    { src: home_kitchen, name: 'home_kitchen' },
+    { src: jewellery, name: 'jewellery' },
+    { src: no_image, name: 'no_image' },
   ];
+
   const imageSize = 75; // size of the images
-  const imageMargin = 20; // margin for the images
+  const imageMargin = 10; // margin for the images
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,8 +72,6 @@ export default function Nav1() {
 
   const visibleImages = images.slice(currentStartIndex, currentStartIndex + visibleImagesCount);
 
-
-  //definetion area
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchModelRef.current && !searchModelRef.current.contains(event.target)) {
@@ -84,9 +84,6 @@ export default function Nav1() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [searchModelRef]);
-
-
-
 
   //return statments
   return (
@@ -155,7 +152,7 @@ export default function Nav1() {
             dialogClassName="custom-modal-2"
             animation={false}
           >
-            <Modal.Body style={{paddingLeft:0,paddingRight:0}}>
+            <Modal.Body style={{ paddingLeft: 0, paddingRight: 0 }}>
               <div
 
                 style={{ display: show1 ? 'block' : 'none' }}
@@ -176,48 +173,53 @@ export default function Nav1() {
                 <Button className='mt-2 ms-1 rounded-5 r_custom_button' style={{ background: isHoverd ? 'none' : 'none', color: 'black', }}>surf surfexcel</Button>
 
                 <h6 className='mt-4 ms-4'>Popular Catagories</h6>
-                <div style={{ display: 'flex', alignItems: 'center', marginTop:20 }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginTop: 20 }}>
                   {currentStartIndex > 0 && (
-                    <button style={{ marginRight: '5px',marginLeft:5, height:40,width:40,borderRadius:40,border:'1px solid lightgray',background:'white'}} onClick={handlePrev}>
+                    <button style={{ marginRight: '5px', marginLeft: 5, height: 40, width: 40, borderRadius: 40, border: '1px solid lightgray', background: 'white' }} onClick={handlePrev}>
                       <FontAwesomeIcon icon={faAngleLeft} />
                     </button>
                   )}
-                  <div style={{ display: 'flex', overflow: 'hidden' }} ref={containerRef}>
-                    {visibleImages.map((src, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          height: imageSize,
-                          width: imageSize,
-                          borderRadius: '50%',
-                          background: '#FDE7E7',
-                          margin: '0 10px',
-                          paddingTop: 10,
-
-                          paddingBottom: 10,
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          cursor: 'pointer'
-                        }}
-                      >
-                        <div style={{ height: imageSize, width: imageSize, borderRadius: '50%', background: '#FDE7E7', overflow: 'hidden' }}>
-                          <img
-                            src={src}
-                            alt={`Example ${index}`}
-                            style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-                          />
+                  <div style={{ display: 'flex', overflow: 'hidden', paddingTop: 0, paddingBottom: 0 }} ref={containerRef}>
+                    {visibleImages.map((image, index) => (
+                      <div>
+                        <div
+                          key={index}
+                          style={{
+                            height: imageSize,
+                            width: imageSize,
+                            borderRadius: '50%',
+                            background: '#FDE7E7',
+                            margin: '0 10px',
+                            paddingTop: 0,
+                            paddingBottom: 0,
+                            display: 'flex',
+                            flexDirection: 'column',  // This will stack the image and name vertically
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <div style={{ height: imageSize, width: imageSize, borderRadius: '50%', background: '#FDE7E7', overflow: 'hidden' }}>
+                            <img
+                              src={image.src}
+                              alt={`Example ${index}`}
+                              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                            />
+                          </div>
+                        </div>
+                        <div style={{ marginTop: 2, textAlign: 'center', fontSize: 12, cursor: 'pointer' }}>
+                          {image.name}
                         </div>
                       </div>
                     ))}
                   </div>
                   {currentStartIndex + visibleImagesCount < images.length && (
-                    <button style={{ marginLeft:5,marginRight:5, height:40,width:40,borderRadius:40,border:'1px solid lightgray',background:'white'}} onClick={handleNext}>
+                    <button style={{ marginLeft: 5, marginRight: 5, height: 40, width: 40, borderRadius: 40, border: '1px solid lightgray', background: 'white' }} onClick={handleNext}>
                       <FontAwesomeIcon icon={faAngleRight} />
                     </button>
                   )}
                 </div>
-               
+
               </div>
             </Modal.Body>
           </Modal>
