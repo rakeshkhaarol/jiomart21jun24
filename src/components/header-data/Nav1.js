@@ -104,7 +104,7 @@ export default function Nav1() {
             onMouseEnter={() => { setIsHoverd(true) }}
             onMouseLeave={() => { setIsHoverd(false) }}>
             <FontAwesomeIcon style={{ fontSize: '13px', paddingRight: 5 }} icon={faLocationDot} />Deliver To Mumbai 400020</Button>
-          <Modal show={show} onHide={handleClose} className="custom-modal " animation={false} style={{ top: 53, marginLeft: -310 }}>
+          <Modal backdrop="static" show={show} onHide={handleClose} className="custom-modal " animation={false} style={{ top: 53, marginLeft: -310 }}>
             <div className="modal-triangle ms-2" style={{ top: -20, left: 100, }} ></div>
             <Modal.Title className='mt-4 ms-4'>Select Delivery Location</Modal.Title>
             <Modal.Body className='ms-2'>Sign in or set delivery location to see product availability, offers and discounts.</Modal.Body>
