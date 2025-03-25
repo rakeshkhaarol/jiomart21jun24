@@ -242,44 +242,6 @@ export default function Nav1() {
           width:470px
         }
       `}</style>
-
-
-          {/* <Modal
-          animation={false}
-        style={{margin:0,padding:0}}
-            show={show1}
-            onHide={() => setShow1(false)}
-           
-          >
-            <div id='search-model' style={{ display: show1 ? 'block' : 'none' }} ref={searchModelRef} onHide={handleClose1}>
-              <h6 className='mt-4 ms-4'>Discover More</h6>
-              <Button className='mt-2 ms-4 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>cold drinks</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>sugar</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>biscuits</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>oil</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>mustard oil</Button>
-              <Button className='mt-2 ms-4 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>bharat rise</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>rise</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>atta</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>ghee</Button>
-              <Button className='mt-2 ms-1 rounded-5 text-secondary' style={{ background: isHoverd ? 'none' : 'none', }}>surf surfexcel</Button>
-            </div>
-          </Modal> */}
-
-
-          {/* <div id='search-model' style={{ display: show1 ? 'block' : 'none' }} ref={searchModelRef} onHide={handleClose1}>
-            <h6 className='mt-4 ms-4'>Discover More</h6>
-            <Button className='mt-2 ms-4 rounded-5 text-secondary' style={{background: isHoverd ? 'none' : 'none', }}>cold drinks</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>sugar</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>biscuits</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>oil</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>mustard oil</Button>
-            <Button className='mt-2 ms-4 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>bharat rise</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>rise</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>atta</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>ghee</Button>
-            <Button className='mt-2 ms-1 rounded-5 text-secondary'  style={{background: isHoverd ? 'none' : 'none', }}>surf surfexcel</Button>
-          </div> */}
           <Form className="d-flex" style={{ width: '57%' }} >
             <div className="search-container">
               <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
