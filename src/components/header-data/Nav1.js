@@ -108,7 +108,7 @@ export default function Nav1() {
             <div className="modal-triangle ms-2" style={{ top: -20, left: 100, }} ></div>
             <Modal.Title className='mt-4 ms-4'>Select Delivery Location</Modal.Title>
             <Modal.Body className='ms-2'>Sign in or set delivery location to see product availability, offers and discounts.</Modal.Body>
-            <Link to={'/Sign_Up'}>
+            <Link to={'/signIn'}>
               <Button style={{ width: 500 }} className='ms-4 me-4 mb-3 pt-3 pb-3 rounded-5 full-w-hvr' >Sign in to select address</Button>
             </Link>
             <div className='hvr1 pt-4 pb-4'
@@ -287,7 +287,7 @@ export default function Nav1() {
           >
             <FontAwesomeIcon icon={faCircleUser} style={{ paddingRight: 5, fontSize: '24px', color: 'white' }} />
             <Button variant="link" style={{ padding: '0', color: 'white', fontSize: '16px', textDecoration: 'none', paddingBottom: '2px ' }}>
-              Sign In
+              Sign up
             </Button>
           </div>
         </Navbar.Collapse>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Sign_Up() {
+function signUp() {
     return (
 
             <div className='r_sign_up' style={{width:100,height:300,background:'blue',justifyContent:'center',alignItems:'center',display:'flex'}}>
@@ -9,4 +9,4 @@ sdfd
     )
 }
 
-export default Sign_Up
+export default signUp

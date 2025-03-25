@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import Sign_Up from "./pages/Sign_Up";
+import signUp from "./pages/signUp";
 
 
 
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}></Route>
-          <Route path="/sign_up" element={<Sign_Up />}></Route>
+          <Route path="/sign_up" element={<signUp/>}></Route>
           
         </Routes>
       </BrowserRouter>
