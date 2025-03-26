@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import Sign_Up from "./pages/Sign_Up"; // Change this to PascalCase
+import SignUp from "./pages/SignUp";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}></Route>
-          <Route path="/Sign_Up" element={<Sign_Up />} /> {/* PascalCase */}          
+          <Route path="/sign_Up" element={<SignUp />} /> {/* PascalCase */}          
+          <Route path="/notfound" element={<NotFound />} /> {/* PascalCase */}          
         </Routes>
       </BrowserRouter>
     
