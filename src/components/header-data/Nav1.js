@@ -269,7 +269,10 @@ export default function Nav1() {
               cursor: 'pointer', // Change cursor type as needed
             }}
           >
+            <Link to={'/notfound'}>
+            
             <FontAwesomeIcon icon={faCartShopping} style={{ color: 'white', fontSize: '20px' }} />
+            </Link>
           </div>
           <div className='hvr'
             style={{
@@ -285,10 +288,13 @@ export default function Nav1() {
 
             }}
           >
-            <FontAwesomeIcon icon={faCircleUser} style={{ paddingRight: 5, fontSize: '24px', color: 'white' }} />
-            <Button variant="link" style={{ padding: '0', color: 'white', fontSize: '16px', textDecoration: 'none', paddingBottom: '2px ' }}>
-              Sign up
-            </Button>
+            <Link to={'/sign_Up '}>
+
+              <FontAwesomeIcon icon={faCircleUser} style={{ paddingRight: 5, fontSize: '24px', color: 'white',marginBottom:-5 }} />
+              <Button variant="link" style={{ padding: '0', color: 'white', fontSize: '16px', textDecoration: 'none', paddingBottom: '2px ' }}>
+                Sign up
+              </Button>
+            </Link>
           </div>
         </Navbar.Collapse>
       </Container>
